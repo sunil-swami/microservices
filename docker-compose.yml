@@ -6,7 +6,7 @@ networks:
     
 services:
   gateway-api:
-    image: isunulswami/gateway-api
+    image: isunilswami/gateway-api
     container_name: gateway-api
     restart: always
     ports:
@@ -22,7 +22,7 @@ services:
       - localdev
 
    customer-api:
-    image: isunulswami/customer-api
+    image: isunilswami/customer-api
     container_name: customer-api
     restart: always
     ports:
@@ -34,7 +34,7 @@ services:
       - localdev
    
    account-api:
-    image: isunulswami/account-api
+    image: isunilswami/account-api
     container_name: account-api
     restart: always
     ports:
@@ -46,7 +46,7 @@ services:
       - localdev
 
    transaction-api:
-    image: isunulswami/transaction-api
+    image: isunilswami/transaction-api
     container_name: transaction-api
     restart: always
     ports:
@@ -58,7 +58,7 @@ services:
       - localdev
 
    request-api:
-    image: isunulswami/request-api
+    image: isunilswami/request-api
     container_name: request-api
     restart: always
     ports:
@@ -70,14 +70,14 @@ services:
       - localdev
         
   eureka-server:
-    image: isunulswami/eureka-server
+    image: isunilswami/eureka-server
     container_name: eureka-server
    restart: always
     ports:
       - "8761:80"
 
   config-server:
-    image: isunulswami/eureka-server
+    image: isunilswami/config-server
     container_name: config-server
    restart: always
     ports:
