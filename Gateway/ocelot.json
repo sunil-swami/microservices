@@ -1,0 +1,44 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/values",
+      "DownstreamScheme": "http",
+      "UseServiceDiscovery": true,
+      "ServiceName": "account-service",
+      "UpstreamPathTemplate": "/account-api/{catchAll}"
+    },
+    {
+      "DownstreamPathTemplate": "/api/values",
+      "DownstreamScheme": "http",
+      "UseServiceDiscovery": true,
+      "ServiceName": "customer-service",
+      "UpstreamPathTemplate": "/customer-api/{catchAll}",
+      "UpstreamHttpMethod": []
+    },
+    {
+      "DownstreamPathTemplate": "/api/values",
+      "DownstreamScheme": "http",
+      "UseServiceDiscovery": true,
+      "ServiceName": "transaction-service",
+      "UpstreamPathTemplate": "/transaction-api/{catchAll}",
+      "UpstreamHttpMethod": []
+    },
+    {
+      "DownstreamPathTemplate": "/api/values",
+      "DownstreamScheme": "http",
+      "UseServiceDiscovery": true,
+      "ServiceName": "request-service",
+      "UpstreamPathTemplate": "/request-api/{catchAll}",
+      "UpstreamHttpMethod": []
+    }
+
+  ],
+  "GlobalConfiguration": {
+    "UseServiceDiscovery": true,
+    "ServiceDiscoveryProvider": {
+      "Type": "Eureka",
+      "Host": "localhost",
+      "Port": "8761"
+    }
+  }
+}
