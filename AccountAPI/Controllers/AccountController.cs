@@ -25,21 +25,21 @@ namespace AccountAPI.Controllers
 
         // POST api/values
         [HttpPost]
-        public ActionResult<string> RegisterAccount([FromBody] string value)
+        public ActionResult<string> Register([FromBody] string value)
         {
             return "Register Account.";
         }
 
         // POST api/values
         [HttpPost]
-        public ActionResult<string> UpdateAccount([FromBody] string value)
+        public ActionResult<string> Update([FromBody] string value)
         {
             return "Update Account Info.";
         }
 
         // POST api/values
         [HttpPost]
-        public ActionResult<string> CloseAccount([FromBody] int id)
+        public ActionResult<string> Close([FromBody] int id)
         {
             return "Close  customer account.";
         }

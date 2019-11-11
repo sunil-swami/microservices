@@ -27,14 +27,14 @@ namespace CustomerAPI.Controllers
 
         // POST api/values
         [HttpPost]
-        public ActionResult<string> RegisterCustomer([FromBody] string value)
+        public ActionResult<string> Register([FromBody] string value)
         {
             return "Register Customer.";
         }
 
         // POST api/values
         [HttpPost]
-        public ActionResult<string> UpdateCustomer([FromBody] string value)
+        public ActionResult<string> Update([FromBody] string value)
         {
             return "Update Customer Info.";
         }
