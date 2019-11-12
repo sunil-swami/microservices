@@ -21,7 +21,7 @@ services:
     networks:
       - localdev
 
-   customer-api:
+  customer-api:
     image: isunilswami/customer-api
     container_name: customer-api
     restart: always
@@ -33,7 +33,7 @@ services:
     networks:
       - localdev
    
-   account-api:
+  account-api:
     image: isunilswami/account-api
     container_name: account-api
     restart: always
@@ -45,24 +45,24 @@ services:
     networks:
       - localdev
 
-   transaction-api:
+  transaction-api:
     image: isunilswami/transaction-api
     container_name: transaction-api
     restart: always
     ports:
-      - "7004:80"
+      - "7003:80"
     depends_on:
       - eureka-server
       - config-server
     networks:
       - localdev
 
-   request-api:
+  request-api:
     image: isunilswami/request-api
     container_name: request-api
     restart: always
     ports:
-      - "7003:80"
+      - "7004:80"
     depends_on:
       - eureka-server
       - config-server
@@ -72,14 +72,14 @@ services:
   eureka-server:
     image: isunilswami/eureka-server
     container_name: eureka-server
-   restart: always
+    restart: always
     ports:
-      - "8761:80"
+      - "8761:8761"
 
   config-server:
     image: isunilswami/config-server
     container_name: config-server
-   restart: always
+    restart: always
     ports:
-      - "8888:80"
+      - "8888:8888"
   
