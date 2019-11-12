@@ -1,8 +1,4 @@
 version: '3.5'
-
-networks:
-  localdev:
-    name: localdev
     
 services:
   gateway-api:
