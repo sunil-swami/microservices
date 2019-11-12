@@ -5,6 +5,8 @@ services:
     image: isunilswami/gateway-api
     container_name: gateway-api
     restart: always
+    ports:
+      - "7000:80"
     depends_on:
       - eureka-server
       - config-server
@@ -18,6 +20,8 @@ services:
     image: isunilswami/customer-api
     container_name: customer-api
     restart: always
+    ports:
+      - "7002:80"
     depends_on:
       - eureka-server
       - config-server
@@ -27,6 +31,8 @@ services:
     image: isunilswami/account-api
     container_name: account-api
     restart: always
+    ports:
+      - "7001:80"
     depends_on:
       - eureka-server
       - config-server
@@ -36,6 +42,8 @@ services:
     image: isunilswami/transaction-api
     container_name: transaction-api
     restart: always
+    ports:
+      - "7003:80"
     depends_on:
       - eureka-server
       - config-server
@@ -45,6 +53,8 @@ services:
     image: isunilswami/request-api
     container_name: request-api
     restart: always
+    ports:
+      - "7004:80"
     depends_on:
       - eureka-server
       - config-server
