@@ -16,5 +16,6 @@ RUN dotnet publish "TransactionAPI.csproj" -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
+ENV ASPNETCORE_URLS=http://+:7003
 COPY --from=publish /app .
 ENTRYPOINT ["dotnet", "TransactionAPI.dll"]

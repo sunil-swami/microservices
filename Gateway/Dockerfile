@@ -16,5 +16,6 @@ RUN dotnet publish "Gateway.csproj" -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
+ENV ASPNETCORE_URLS=http://+:7000
 COPY --from=publish /app .
 ENTRYPOINT ["dotnet", "Gateway.dll"]

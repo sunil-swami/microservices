@@ -9,8 +9,6 @@ services:
     image: isunilswami/gateway-api
     container_name: gateway-api
     restart: always
-    ports:
-      - "7000:80"
     depends_on:
       - eureka-server
       - config-server
@@ -18,56 +16,43 @@ services:
       - account-api
       - transaction-api
       - request-api
-    networks:
-      - localdev
+    network_mode: host
 
   customer-api:
     image: isunilswami/customer-api
     container_name: customer-api
     restart: always
-    ports:
-      - "7002:80"
     depends_on:
       - eureka-server
       - config-server
-    networks:
-      - localdev
+    network_mode: host
    
   account-api:
     image: isunilswami/account-api
     container_name: account-api
     restart: always
-    ports:
-      - "7001:80"
     depends_on:
       - eureka-server
       - config-server
-    networks:
-      - localdev
+    network_mode: host
 
   transaction-api:
     image: isunilswami/transaction-api
     container_name: transaction-api
     restart: always
-    ports:
-      - "7003:80"
     depends_on:
       - eureka-server
       - config-server
-    networks:
-      - localdev
+    network_mode: host
 
   request-api:
     image: isunilswami/request-api
     container_name: request-api
     restart: always
-    ports:
-      - "7004:80"
     depends_on:
       - eureka-server
       - config-server
-    networks:
-      - localdev
+    network_mode: host
         
   eureka-server:
     image: isunilswami/eureka-server

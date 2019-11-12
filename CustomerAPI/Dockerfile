@@ -16,5 +16,6 @@ RUN dotnet publish "CustomerAPI.csproj" -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
+ENV ASPNETCORE_URLS=http://+:7002
 COPY --from=publish /app .
 ENTRYPOINT ["dotnet", "CustomerAPI.dll"]
